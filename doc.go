@@ -38,7 +38,7 @@ table called announcements, which has indexes to keep the performance tight.
 
 The configuration file is a JSON file containing the following keys:
 
-  - spoolfile (string): the path to the file to use as spool. Keep this value
+  - spool (string): the path to the file to use as spool. Keep this value
     constant to allow the application state to be persisted between application
     executions.
   - autodiscard (bool): if this value is provided, it will set whether videodog
@@ -69,7 +69,7 @@ For each channel entry, the following object is used:
 An example object is given below:
 
 	{
-	  "spoolfile": "./data/spool.db",
+	  "spool": "./data/spool.db",
 	  "autodiscard": true,
 	  "channels": {
 	    "main_channel": {
