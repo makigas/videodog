@@ -16,6 +16,7 @@ var (
 
 	flagConfig     string // The config file that should be used.
 	flagNoannounce bool   // Whether to avoid announcing the videos (part of dry-run mode)
+	flagInterval   uint   // The interval between checks, in minutes
 )
 
 // The different errors used by the application.
@@ -65,6 +66,7 @@ func initContext() {
 func parseArgs() {
 	flag.StringVar(&flagConfig, "config", "", "The config file to use")
 	flag.BoolVar(&flagNoannounce, "noannounce", false, "Don't announce the videos")
+	flag.UintVar(&flagInterval, "interval", 20, "The interval between checks")
 	flag.Parse()
 
 	if flagConfig == "" {

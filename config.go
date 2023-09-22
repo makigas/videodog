@@ -27,7 +27,7 @@ func (c *Channel) TryCheckStale() bool {
 	c.lastCheckLock.Lock()
 	defer c.lastCheckLock.Unlock()
 
-	staleLimit := time.Now().Add(-20 * time.Minute)
+	staleLimit := time.Now().Add(-time.Duration(flagInterval) * time.Minute)
 	if c.lastCheck.Before(staleLimit) {
 		// It has been ten minutes since the last time we checked the feed.
 		c.lastCheck = time.Now()
